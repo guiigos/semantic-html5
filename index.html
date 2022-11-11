@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Registration</title>
+
   </head>
   <body>
     <form name="registration">
@@ -42,6 +43,9 @@
         />
       </fieldset>
 
+      <img id="img-preview" />
+      <input type="file" accept="image/*" onchange="showPreview(event);" />
+
       <button id="sb" type="submit">Submit</button>
     </form>
 
@@ -55,6 +59,16 @@
 
         console.log(form.name.value, form.email.value);
       });
+
+      function showPreview(event) {
+        if (event.target.files.length > 0) {
+          const src = URL.createObjectURL(event.target.files[0]);
+          const img = document.getElementById('img-preview');
+
+          img.src = src;
+          img.style.display = 'block';
+        }
+      };
     </script>
   </body>
 </html>
