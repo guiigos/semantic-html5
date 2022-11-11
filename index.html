@@ -4,52 +4,135 @@
     <meta charset="UTF-8" />
     <title>Registration</title>
 
+    <style type="text/css">
+      * {
+          margin: 0;
+          padding: 0;
+      }
+
+      header {
+          background: gray;
+          height: 10vh;
+          margin: 10px;
+          display: flex;
+          flex-direction: column;
+      }
+
+      nav {
+          background: lightgray;
+          height: 100%;
+          margin: 10px;
+      }
+
+      main {
+          height: calc(80vh - 40px);
+          background: gray;
+          margin: 10px;
+          display: flex;
+          flex-direction: row;
+      }
+
+      section, aside {
+          background: lightgray;
+          margin: 10px;
+      }
+
+      section {
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+      }
+
+      article {
+          background: white;
+          height: 100%;
+          margin: 10px;
+      }
+
+      aside {
+          width: 20%;
+      }
+
+      footer {
+          background: gray;
+          height: 10vh;
+          margin: 10px;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <form name="registration">
-      <fieldset>
-        <legend>Personal</legend>
-        <label for="name">Name</label>
-        <input
-          id="id_name"
-          type="text"
-          name="name"
-          placeholder=""
-          title="Enter your name here"
-          required
-        />
+    <!-- exibe caso o navegador não suporte javascript -->
+    <noscript></noscript>
 
-        <label for="email">E-mail</label>
-        <input
-          id="id_email"
-          type="email"
-          name="email"
-          placeholder=""
-          title="Enter your e-mail here"
-          required
-        />
-      </fieldset>
+    <header>
+      <nav></nav>
+    </header>
 
-      <fieldset>
-        <legend>Address</legend>
-        <label for="street">Street</label>
-        <input
-          id="id_street"
-          type="text"
-          name="street"
-          placeholder=""
-          title="Enter your adress street here"
-          required
-        />
-      </fieldset>
+    <main>
+      <section>
+        <article></article>
+        <article>
+            <!-- uma seção que é citada de outra fonte -->
+            <blockquote cite="http://www.worldwildlife.org/who/index.html">
+            Foblockquoter 50 years, WWF has been protecting the future of nature. The world's leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.
+            </blockquote>
+        </article>
+      </section>
 
-      <img id="img-preview" />
-      <input type="file" accept="image/*" onchange="showPreview(event);" />
+      <aside></aside>
 
-      <button id="sb" type="submit">Submit</button>
-    </form>
+      <form name="registration">
+        <fieldset>
+          <legend>Personal</legend>
+          <label for="name">Name</label>
+          <input
+            id="id_name"
+            type="text"
+            name="name"
+            placeholder=""
+            title="Enter your name here"
+            required
+          />
 
-    <output name="result"></output>
+          <label for="email">E-mail</label>
+          <input
+            id="id_email"
+            type="email"
+            name="email"
+            placeholder=""
+            title="Enter your e-mail here"
+            required
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Address</legend>
+          <label for="street">Street</label>
+          <input
+            id="id_street"
+            type="text"
+            name="street"
+            placeholder=""
+            title="Enter your adress street here"
+            required
+          />
+        </fieldset>
+
+        <img id="img-preview" />
+        <input type="file" accept="image/*" onchange="showPreview(event);" />
+
+        <button id="sb" type="submit">Submit</button>
+      </form>
+
+      <output name="result"></output>
+    </main>
+
+    <footer translate="no">Copyright &copy; &reg; <script>document.write(new Date().getFullYear())</script></footer>
 
     <script lang="javascript" type="text/javascript" charset="UTF-8">
       const form = document.forms.registration;
