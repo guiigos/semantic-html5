@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registration</title>
+  </head>
+  <body>
+    <form name="registration">
+      <fieldset>
+        <legend>Personal</legend>
+        <label for="name">Name</label>
+        <input
+          id="id_name"
+          type="text"
+          name="name"
+          placeholder=""
+          title="Enter your name here"
+          required
+        />
+
+        <label for="email">E-mail</label>
+        <input
+          id="id_email"
+          type="email"
+          name="email"
+          placeholder=""
+          title="Enter your e-mail here"
+          required
+        />
+      </fieldset>
+
+      <fieldset>
+        <legend>Address</legend>
+        <label for="street">Street</label>
+        <input
+          id="id_street"
+          type="text"
+          name="street"
+          placeholder=""
+          title="Enter your adress street here"
+          required
+        />
+      </fieldset>
+
+      <button id="sb" type="submit">Submit</button>
+    </form>
+
+    <output name="result"></output>
+
+    <script lang="javascript" type="text/javascript" charset="UTF-8">
+      const form = document.forms.registration;
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        console.log(form.name.value, form.email.value);
+      });
+    </script>
+  </body>
+</html>
